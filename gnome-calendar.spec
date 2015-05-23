@@ -20,6 +20,8 @@ BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libtool >= 2:2.2.6
 BuildRequires:	pkgconfig >= 1:0.22
+BuildRequires:	tar >= 1:1.22
+BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.44.0
 Requires:	evolution-data-server >= 3.13.90
