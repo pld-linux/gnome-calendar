@@ -1,20 +1,21 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.16.2
+Version:	3.18.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.16/%{name}-%{version}.tar.xz
-# Source0-md5:	987df4b65e1791e4339810b8c0195202
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.18/%{name}-%{version}.tar.xz
+# Source0-md5:	661203861d31b25afdc3acb9e2434ec3
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.69
 BuildRequires:	automake >= 1:1.11.1
-BuildRequires:	evolution-data-server-devel >= 3.13.90
+BuildRequires:	evolution-data-server-devel >= 3.18.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gnome-common
+BuildRequires:	gnome-online-accounts-devel >= 3.2.0
 BuildRequires:	gtk+3-devel >= 3.16.0
 BuildRequires:	intltool >= 0.40.6
 BuildRequires:	libical-devel >= 1.0.1
@@ -24,7 +25,7 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.44.0
-Requires:	evolution-data-server >= 3.13.90
+Requires:	evolution-data-server >= 3.18.0
 Requires:	glib2 >= 1:2.44.0
 Requires:	gtk+3 >= 3.16.0
 Requires:	hicolor-icon-theme
