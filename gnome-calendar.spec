@@ -1,12 +1,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.20.0
-Release:	2
+Version:	3.20.1
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	6cb158ef73139969dbb8ebef4b07b51d
+# Source0-md5:	768716e395f64ea78643a507202a5086
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.69
