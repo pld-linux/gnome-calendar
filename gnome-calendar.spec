@@ -1,12 +1,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.20.1
+Version:	3.20.2
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
 Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.20/%{name}-%{version}.tar.xz
-# Source0-md5:	768716e395f64ea78643a507202a5086
+# Source0-md5:	bd7b8cdd47659c92cbae4efb34fc0669
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	appstream-glib-devel
 BuildRequires:	autoconf >= 2.69
@@ -27,6 +27,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.44.0
 Requires:	evolution-data-server >= 3.18.0
 Requires:	glib2 >= 1:2.44.0
+Requires:	gnome-online-accounts >= 3.2.0
 Requires:	gtk+3 >= 3.20.0
 Requires:	hicolor-icon-theme
 Requires:	libical >= 1.0.1
