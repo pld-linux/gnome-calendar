@@ -1,20 +1,24 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.26.2
+Version:	3.28.0
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.26/%{name}-%{version}.tar.xz
-# Source0-md5:	531ce46e773e1542642e29baf28b081b
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.28/%{name}-%{version}.tar.xz
+# Source0-md5:	144ef65cfb41c17afc32d2d52bfe7e08
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	appstream-glib-devel
 BuildRequires:	evolution-data-server-devel >= 3.18.0
+BuildRequires:	geoclue2-devel >= 2.4
+BuildRequires:	geocode-glib-devel >= 3.24.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.44.0
 BuildRequires:	gnome-online-accounts-devel >= 3.2.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
-BuildRequires:	gtk+3-devel >= 3.22.0
+BuildRequires:	gtk+3-devel >= 3.22.20
+BuildRequires:	libdazzle-devel >= 3.26.1
+BuildRequires:	libgweather-devel >= 3.28.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	meson >= 0.42.0
@@ -27,7 +31,7 @@ Requires:	evolution-data-server >= 3.18.0
 Requires:	glib2 >= 1:2.44.0
 Requires:	gnome-online-accounts >= 3.2.0
 Requires:	gsettings-desktop-schemas >= 3.22.0
-Requires:	gtk+3 >= 3.22.0
+Requires:	gtk+3 >= 3.22.20
 Requires:	hicolor-icon-theme
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -49,13 +53,12 @@ samych komponentów, z których zbudowane jest środowisko, Calendar
 
 %build
 %meson build
-%ninja -C build
+%meson_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-DESTDIR=$RPM_BUILD_ROOT \
-%ninja -C build install
+%meson_install -C build
 
 %find_lang %{name}
 
