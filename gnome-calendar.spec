@@ -1,12 +1,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.28.0
+Version:	3.30.1
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.28/%{name}-%{version}.tar.xz
-# Source0-md5:	144ef65cfb41c17afc32d2d52bfe7e08
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.30/%{name}-%{version}.tar.xz
+# Source0-md5:	786dbad4252f803a69c4aa738aa67260
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	appstream-glib-devel
 BuildRequires:	evolution-data-server-devel >= 3.18.0
@@ -22,7 +22,9 @@ BuildRequires:	libgweather-devel >= 3.28.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	meson >= 0.42.0
+BuildRequires:	ninja
 BuildRequires:	pkgconfig >= 1:0.22
+BuildRequires:	rpmbuild(macros) >= 1.727
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
@@ -53,12 +55,12 @@ samych komponentów, z których zbudowane jest środowisko, Calendar
 
 %build
 %meson build
-%meson_build -C build
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%meson_install -C build
+%ninja_install -C build
 
 %find_lang %{name}
 
@@ -75,7 +77,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc CONTRIBUTING.md ChangeLog HACKING.md NEWS README.md THANKS.md TODO.md
+%doc CONTRIBUTING.md HACKING.md NEWS README.md THANKS.md TODO.md
 %attr(755,root,root) %{_bindir}/gnome-calendar
 %{_datadir}/metainfo/org.gnome.Calendar.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Calendar.service
