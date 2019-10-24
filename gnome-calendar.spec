@@ -1,40 +1,43 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.32.2
+Version:	3.34.2
 Release:	1
-License:	GPL v2+
+License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.32/%{name}-%{version}.tar.xz
-# Source0-md5:	e810125ad9a6209acc705654ce813f91
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.34/%{name}-%{version}.tar.xz
+# Source0-md5:	2ca2105402c3be9e791c27a56ad1f5ff
 URL:		https://wiki.gnome.org/Apps/Calendar
-BuildRequires:	appstream-glib-devel
-BuildRequires:	evolution-data-server-devel >= 3.18.0
+BuildRequires:	evolution-data-server-devel >= 3.33.2
 BuildRequires:	geoclue2-devel >= 2.4
 BuildRequires:	geocode-glib-devel >= 3.24.0
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.44.0
+BuildRequires:	glib2-devel >= 1:2.58.0
 BuildRequires:	gnome-online-accounts-devel >= 3.2.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
 BuildRequires:	gtk+3-devel >= 3.22.20
-BuildRequires:	libdazzle-devel >= 3.26.1
+BuildRequires:	libdazzle-devel >= 3.33.1
 BuildRequires:	libgweather-devel >= 3.28.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup-devel >= 2.4
-BuildRequires:	meson >= 0.42.0
-BuildRequires:	ninja
+BuildRequires:	meson >= 0.50.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
-BuildRequires:	rpmbuild(macros) >= 1.727
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.44.0
-Requires:	evolution-data-server >= 3.18.0
-Requires:	glib2 >= 1:2.44.0
+Requires(post,postun):	glib2 >= 1:2.58.0
+Requires:	evolution-data-server >= 3.33.2
+Requires:	geoclue2 >= 2.4
+Requires:	geocode-glib >= 3.24.0
+Requires:	glib2 >= 1:2.58.0
 Requires:	gnome-online-accounts >= 3.2.0
 Requires:	gsettings-desktop-schemas >= 3.22.0
 Requires:	gtk+3 >= 3.22.20
 Requires:	hicolor-icon-theme
+Requires:	libdazzle >= 3.33.1
+Requires:	libgweather >= 3.28.0
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -55,6 +58,7 @@ samych komponentów, z których zbudowane jest środowisko, Calendar
 
 %build
 %meson build
+
 %ninja_build -C build
 
 %install
@@ -77,13 +81,13 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -f %{name}.lang
 %defattr(644,root,root,755)
-%doc CONTRIBUTING.md HACKING.md NEWS README.md THANKS.md TODO.md
+%doc NEWS README.md THANKS.md TODO.md
 %attr(755,root,root) %{_bindir}/gnome-calendar
-%{_datadir}/metainfo/org.gnome.Calendar.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.Calendar.service
 %{_datadir}/glib-2.0/schemas/org.gnome.calendar.enums.xml
 %{_datadir}/glib-2.0/schemas/org.gnome.calendar.gschema.xml
 %{_datadir}/gnome-shell/search-providers/org.gnome.Calendar.search-provider.ini
+%{_datadir}/metainfo/org.gnome.Calendar.appdata.xml
 %{_desktopdir}/org.gnome.Calendar.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Calendar.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Calendar-symbolic.svg
