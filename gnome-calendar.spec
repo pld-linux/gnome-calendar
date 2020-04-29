@@ -1,12 +1,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	3.34.2
+Version:	3.36.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.34/%{name}-%{version}.tar.xz
-# Source0-md5:	2ca2105402c3be9e791c27a56ad1f5ff
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/gnome-calendar/3.36/%{name}-%{version}.tar.xz
+# Source0-md5:	35c0ef243acf0a0ecb912b8c575ee145
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	evolution-data-server-devel >= 3.33.2
 BuildRequires:	geoclue2-devel >= 2.4
@@ -18,6 +18,7 @@ BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
 BuildRequires:	gtk+3-devel >= 3.22.20
 BuildRequires:	libdazzle-devel >= 3.33.1
 BuildRequires:	libgweather-devel >= 3.28.0
+BuildRequires:	libhandy-devel >= 0.0.9
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	meson >= 0.50.0
@@ -38,6 +39,7 @@ Requires:	gtk+3 >= 3.22.20
 Requires:	hicolor-icon-theme
 Requires:	libdazzle >= 3.33.1
 Requires:	libgweather >= 3.28.0
+Requires:	libhandy >= 0.0.9
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -90,4 +92,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/metainfo/org.gnome.Calendar.appdata.xml
 %{_desktopdir}/org.gnome.Calendar.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.Calendar.svg
+%{_iconsdir}/hicolor/scalable/apps/org.gnome.Calendar.Devel.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.Calendar-symbolic.svg
+%{_iconsdir}/hicolor/symbolic/apps/org.gnome.Calendar.Devel-symbolic.svg
