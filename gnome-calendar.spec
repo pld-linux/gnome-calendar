@@ -1,12 +1,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	40.1
+Version:	40.2
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-calendar/40/%{name}-%{version}.tar.xz
-# Source0-md5:	d418bdba533ab066207a05c38d7faaf0
+# Source0-md5:	003a9a645aef0f3b80952836fe2260d3
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	evolution-data-server-devel >= 3.33.2
 BuildRequires:	geoclue2-devel >= 2.4
