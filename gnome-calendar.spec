@@ -1,12 +1,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	40.2
+Version:	41.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-calendar/40/%{name}-%{version}.tar.xz
-# Source0-md5:	003a9a645aef0f3b80952836fe2260d3
+Source0:	https://download.gnome.org/sources/gnome-calendar/41/%{name}-%{version}.tar.xz
+# Source0-md5:	a7bae93e5d76ee02405499a116a681b3
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	evolution-data-server-devel >= 3.33.2
 BuildRequires:	geoclue2-devel >= 2.4
@@ -17,7 +17,7 @@ BuildRequires:	gnome-online-accounts-devel >= 3.2.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
 BuildRequires:	gtk+3-devel >= 3.22.20
 BuildRequires:	libdazzle-devel >= 3.33.1
-BuildRequires:	libgweather-devel >= 3.28.0
+BuildRequires:	libgweather-devel >= 40.0
 BuildRequires:	libhandy1-devel >= 1.0.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup-devel >= 2.4
@@ -38,7 +38,7 @@ Requires:	gsettings-desktop-schemas >= 3.22.0
 Requires:	gtk+3 >= 3.22.20
 Requires:	hicolor-icon-theme
 Requires:	libdazzle >= 3.33.1
-Requires:	libgweather >= 3.28.0
+Requires:	libgweather >= 40.0
 Requires:	libhandy1 >= 1.0.0
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
