@@ -1,24 +1,24 @@
+# TODO: use gtk4-update-icon-cache
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	41.2
+Version:	42.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-calendar/41/%{name}-%{version}.tar.xz
-# Source0-md5:	18eafea91633d2cc1658301858b77c51
+Source0:	https://download.gnome.org/sources/gnome-calendar/42/%{name}-%{version}.tar.xz
+# Source0-md5:	fb7db8e8d603b6af2966d038b1ad5e43
+Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Calendar
 BuildRequires:	evolution-data-server-devel >= 3.33.2
 BuildRequires:	geoclue2-devel >= 2.4
 BuildRequires:	geocode-glib-devel >= 3.24.0
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.67.5
-BuildRequires:	gnome-online-accounts-devel >= 3.2.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
-BuildRequires:	gtk+3-devel >= 3.22.20
-BuildRequires:	libdazzle-devel >= 3.33.1
-BuildRequires:	libgweather-devel >= 40.0
-BuildRequires:	libhandy1-devel >= 1.0.0
+BuildRequires:	gtk4-devel >= 4.6.0
+BuildRequires:	libadwaita-devel >= 1.0.0
+BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup-devel >= 2.4
 BuildRequires:	meson >= 0.53.0
@@ -33,13 +33,11 @@ Requires:	evolution-data-server >= 3.33.2
 Requires:	geoclue2 >= 2.4
 Requires:	geocode-glib >= 3.24.0
 Requires:	glib2 >= 1:2.67.5
-Requires:	gnome-online-accounts >= 3.2.0
 Requires:	gsettings-desktop-schemas >= 3.22.0
-Requires:	gtk+3 >= 3.22.20
+Requires:	gtk4 >= 4.6.0
 Requires:	hicolor-icon-theme
-Requires:	libdazzle >= 3.33.1
-Requires:	libgweather >= 40.0
-Requires:	libhandy1 >= 1.0.0
+Requires:	libadwaita >= 1.0.0
+Requires:	libgweather4 >= 4.0
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -57,6 +55,7 @@ samych komponentów, z których zbudowane jest środowisko, Calendar
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %meson build
