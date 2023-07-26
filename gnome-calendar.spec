@@ -2,12 +2,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	43.1
+Version:	44.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-calendar/43/%{name}-%{version}.tar.xz
-# Source0-md5:	dab452157219603197568d8983425d37
+Source0:	https://download.gnome.org/sources/gnome-calendar/44/%{name}-%{version}.tar.xz
+# Source0-md5:	b7f3c0ca6d237c491634c1f2c3ff0c3b
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Calendar
 # libedataserverui4-1.0, libedataserver-1.2, libecal-2.0
@@ -17,7 +17,7 @@ BuildRequires:	geocode-glib2-devel >= 3.26.3
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.67.5
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
-BuildRequires:	gtk4-devel >= 4.6.0
+BuildRequires:	gtk4-devel >= 4.10.0
 BuildRequires:	libadwaita-devel >= 1.2
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libical-devel >= 1.0.1
@@ -35,7 +35,7 @@ Requires:	geoclue2 >= 2.4
 Requires:	geocode-glib2 >= 3.26.3
 Requires:	glib2 >= 1:2.67.5
 Requires:	gsettings-desktop-schemas >= 3.22.0
-Requires:	gtk4 >= 4.6.0
+Requires:	gtk4 >= 4.10.0
 Requires:	hicolor-icon-theme
 Requires:	libadwaita >= 1.2
 Requires:	libgweather4 >= 4.0
