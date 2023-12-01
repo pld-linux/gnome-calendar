@@ -2,27 +2,28 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	44.1
+Version:	45.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-calendar/44/%{name}-%{version}.tar.xz
-# Source0-md5:	b7f3c0ca6d237c491634c1f2c3ff0c3b
+Source0:	https://download.gnome.org/sources/gnome-calendar/45/%{name}-%{version}.tar.xz
+# Source0-md5:	a87395a402e9a05cdfbd979f94b1173a
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Calendar
 # libedataserverui4-1.0, libedataserver-1.2, libecal-2.0
 BuildRequires:	evolution-data-server-devel >= 3.45.1
+BuildRequires:	evolution-data-server-gtk4-devel >= 3.45.1
 BuildRequires:	geoclue2-devel >= 2.4
 BuildRequires:	geocode-glib2-devel >= 3.26.3
 BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.67.5
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
-BuildRequires:	gtk4-devel >= 4.10.0
-BuildRequires:	libadwaita-devel >= 1.2
+BuildRequires:	gtk4-devel >= 4.11.2
+BuildRequires:	libadwaita-devel >= 1.4
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup3-devel >= 3.0
-BuildRequires:	meson >= 0.57.0
+BuildRequires:	meson >= 0.58.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig >= 1:0.22
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -31,13 +32,14 @@ BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
 Requires(post,postun):	glib2 >= 1:2.67.5
 Requires:	evolution-data-server >= 3.45.1
+Requires:	evolution-data-server-gtk4-libs >= 3.45.1
 Requires:	geoclue2 >= 2.4
 Requires:	geocode-glib2 >= 3.26.3
 Requires:	glib2 >= 1:2.67.5
 Requires:	gsettings-desktop-schemas >= 3.22.0
-Requires:	gtk4 >= 4.10.0
+Requires:	gtk4 >= 4.11.2
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.2
+Requires:	libadwaita >= 1.4
 Requires:	libgweather4 >= 4.0
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
