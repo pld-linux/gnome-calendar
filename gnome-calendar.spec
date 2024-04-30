@@ -2,12 +2,12 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	45.1
+Version:	46.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-calendar/45/%{name}-%{version}.tar.xz
-# Source0-md5:	a87395a402e9a05cdfbd979f94b1173a
+Source0:	https://download.gnome.org/sources/gnome-calendar/46/%{name}-%{version}.tar.xz
+# Source0-md5:	2f2791abb0bf33b8a1e7d448001aedc2
 Patch0:		%{name}-no-update.patch
 URL:		https://wiki.gnome.org/Apps/Calendar
 # libedataserverui4-1.0, libedataserver-1.2, libecal-2.0
@@ -19,7 +19,7 @@ BuildRequires:	gettext-tools
 BuildRequires:	glib2-devel >= 1:2.67.5
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
 BuildRequires:	gtk4-devel >= 4.11.2
-BuildRequires:	libadwaita-devel >= 1.4
+BuildRequires:	libadwaita-devel >= 1.5
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup3-devel >= 3.0
@@ -39,7 +39,7 @@ Requires:	glib2 >= 1:2.67.5
 Requires:	gsettings-desktop-schemas >= 3.22.0
 Requires:	gtk4 >= 4.11.2
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.4
+Requires:	libadwaita >= 1.5
 Requires:	libgweather4 >= 4.0
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
