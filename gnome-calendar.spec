@@ -58,7 +58,7 @@ samych komponentów, z których zbudowane jest środowisko, Calendar
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
 %meson build
