@@ -2,24 +2,27 @@
 Summary:	Calendar application for GNOME
 Summary(pl.UTF-8):	Aplikacja kalendarza dla GNOME
 Name:		gnome-calendar
-Version:	48.1
+Version:	50.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-calendar/48/%{name}-%{version}.tar.xz
-# Source0-md5:	eb0b3b0c2694c0fbd7f2c6d17eff3dac
+Source0:	https://download.gnome.org/sources/gnome-calendar/50/%{name}-%{version}.tar.xz
+# Source0-md5:	1fa5206a34b76f88594bbf27b85988f2
 Patch0:		%{name}-no-update.patch
+# https://gitlab.gnome.org/GNOME/gnome-calendar/-/merge_requests/763.patch
+Patch1:		%{name}-libical4.patch
 URL:		https://apps.gnome.org/Calendar/
 # libedataserverui4-1.0, libedataserver-1.2, libecal-2.0
 BuildRequires:	evolution-data-server-devel >= 3.45.1
 BuildRequires:	evolution-data-server-gtk4-devel >= 3.45.1
+BuildRequires:	fribidi-devel
 BuildRequires:	geoclue2-devel >= 2.4
 BuildRequires:	geocode-glib2-devel >= 3.26.3
 BuildRequires:	gettext-tools
-BuildRequires:	glib2-devel >= 1:2.67.5
+BuildRequires:	glib2-devel >= 1:2.80.0
 BuildRequires:	gsettings-desktop-schemas-devel >= 3.22.0
-BuildRequires:	gtk4-devel >= 4.15.2
-BuildRequires:	libadwaita-devel >= 1.7
+BuildRequires:	gtk4-devel >= 4.21.2
+BuildRequires:	libadwaita-devel >= 1.8
 BuildRequires:	libgweather4-devel >= 4.0
 BuildRequires:	libical-devel >= 1.0.1
 BuildRequires:	libsoup3-devel >= 3.0
@@ -30,16 +33,16 @@ BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	gtk-update-icon-cache
-Requires(post,postun):	glib2 >= 1:2.67.5
+Requires(post,postun):	glib2 >= 1:2.80.0
 Requires:	evolution-data-server >= 3.45.1
 Requires:	evolution-data-server-gtk4-libs >= 3.45.1
 Requires:	geoclue2 >= 2.4
 Requires:	geocode-glib2 >= 3.26.3
-Requires:	glib2 >= 1:2.67.5
+Requires:	glib2 >= 1:2.80.0
 Requires:	gsettings-desktop-schemas >= 3.22.0
-Requires:	gtk4 >= 4.15.2
+Requires:	gtk4 >= 4.21.2
 Requires:	hicolor-icon-theme
-Requires:	libadwaita >= 1.7
+Requires:	libadwaita >= 1.8
 Requires:	libgweather4 >= 4.0
 Requires:	libical >= 1.0.1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -59,6 +62,7 @@ samych komponentów, z których zbudowane jest środowisko, Calendar
 %prep
 %setup -q
 %patch -P0 -p1
+%patch -P1 -p1
 
 %build
 %meson
